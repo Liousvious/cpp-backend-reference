@@ -534,7 +534,7 @@ Const,volatile修饰指针的含义，
 	String::String(const String &other)//拷贝构造函数，功能与构造函数类似。
 	{
 	   int length=strlen(other.m_data);
-	   m_data=new [length+1];
+	   m_data=new char[length+1];
 	   strcpy(m_data,other.m_data);
 	}
 	String& String::operator =(const String &other) 
@@ -544,7 +544,7 @@ Const,volatile修饰指针的含义，
 	
 	   delete [] m_data;//当地址不相同时，删除原来申请的空间，重新开始构造；
 	   int length=sizeof(other.m_data);
-	   m_data=new [length+1];
+	   m_data=new char[length+1];
 	   strcpy(m_data,other.m_data);
 	   return *this; 
 	}
